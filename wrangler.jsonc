@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "runboard-cloudflare",
+  "main": "cloudflare/src/worker.js",
+  "compatibility_date": "2026-09-24",
+  "workers_dev": true,
+  "assets": {
+    "directory": "src/runboard/static",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "runboard",
+      "database_id": "715098f1-a4c8-4da6-ba67-8d79712ac7ca"
+    }
+  ]
+}
