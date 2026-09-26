@@ -25,4 +25,4 @@ The Cloudflare build integration runs the same deploy command automatically.
 
 ## Dashboard source
 
-The Worker, migrations, and dashboard assets match [Runboard commit ddb36ac](https://github.com/Moe-Zbeeb/runboard/commit/ddb36ac44183cf1e5a0971ada0ab71c36216a455). This update skips metric rows already stored for a client session, returns several metric batches per request, and makes the dashboard poll less often. The Worker creates the new `run_sessions` D1 table automatically on its first request; existing data is unchanged.
+The Worker, migrations, and dashboard assets match [Runboard commit d24722c](https://github.com/Moe-Zbeeb/runboard/commit/d24722cb27e98c07e14bf1a544073f071272f18c). This update restyles the dashboard, bundles the Recursive typeface, and adds a per-run heartbeat trace of recent metric writes; it does not change the Worker API, authentication, or D1 data.
