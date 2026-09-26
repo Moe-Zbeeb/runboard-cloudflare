@@ -2,7 +2,7 @@
 
 This repository hosts a personal [Runboard](https://github.com/Moe-Zbeeb/runboard) dashboard on Cloudflare Workers and D1.
 
-Cloudflare automatically deploys every push to `main`. The dashboard and API share the Worker URL. Runboard clients authenticate writes with the `RUNBOARD_TOKEN` Worker secret; dashboard reads remain available from the browser URL.
+Cloudflare automatically deploys every push to `main`. The dashboard and API share the Worker URL. Every API and dashboard request requires the `RUNBOARD_TOKEN` Worker secret. Open the dashboard once as `/?token=...` to store it in an `HttpOnly` cookie.
 
 ## Local development
 
@@ -25,4 +25,4 @@ The Cloudflare build integration runs the same deploy command automatically.
 
 ## Dashboard source
 
-The dashboard assets match [Runboard commit 74b2156](https://github.com/Moe-Zbeeb/runboard/commit/74b21564d586e43d165d19d2b844ec6cac4deb95). This update adds latest-step binned relationship charts from run metadata; it does not change the Worker API, authentication, or D1 data.
+The Worker, migrations, and dashboard assets match [Runboard commit ddb36ac](https://github.com/Moe-Zbeeb/runboard/commit/ddb36ac44183cf1e5a0971ada0ab71c36216a455). This update skips metric rows already stored for a client session, returns several metric batches per request, and makes the dashboard poll less often. The Worker creates the new `run_sessions` D1 table automatically on its first request; existing data is unchanged.
