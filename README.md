@@ -22,3 +22,7 @@ npm run deploy
 ```
 
 The Cloudflare build integration runs the same deploy command automatically.
+
+## Dashboard source
+
+The dashboard assets match [Runboard commit 74b2156](https://github.com/Moe-Zbeeb/runboard/commit/74b21564d586e43d165d19d2b844ec6cac4deb95). This update adds latest-step binned relationship charts from run metadata; it does not change the Worker API, authentication, or D1 data.
