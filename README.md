@@ -25,4 +25,4 @@ The Cloudflare build integration runs the same deploy command automatically.
 
 ## Dashboard source
 
-The Worker, migrations, and dashboard assets match [Runboard commit 4cd3fe3](https://github.com/Moe-Zbeeb/runboard/commit/4cd3fe3982832c626bbfbf73da733c601205e898). This update restyles the dashboard, bundles the Recursive typeface, and adds a per-run heartbeat trace of recent metric writes; it does not change the Worker API, authentication, or D1 data.
+The Worker, migrations, and dashboard assets match [Runboard v0.3.0, commit 061d6f0](https://github.com/Moe-Zbeeb/runboard/commit/061d6f0). This update makes Worker deduplication atomic when a timed-out request and its retry arrive together, accepts rows without client session fields, keeps queries under D1's 100-parameter limit for batches from many sessions, and escapes run status in the dashboard. The API, authentication, and D1 schema are unchanged.
